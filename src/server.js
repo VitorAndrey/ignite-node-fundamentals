@@ -1,30 +1,22 @@
 import http from "node:http";
 
-import { v4 as uuidv4 } from "uuid";
 import { json } from "./middlewares/json.js";
-import { Database } from "./middlewares/database.js";
-
-const database = new Database();
+import { routes } from "./routes.js";
 
 const server = http.createServer(async (req, res) => {
   const { method, url } = req;
 
   await json(req, res);
 
-  if (method === "GET" && url === "/users") {
-    const users = database.select("users");
+  const route = routes.find((route) => {
+    return route.method === method && route.path.test(url);
+  });
 
-    return res.end(JSON.stringify(users));
-  }
+  if (route) {
+    const routeParams = req.url.match(route.path);
+    req.params = { ...routeParams.groups };
 
-  if (method === "POST" && url === "/users") {
-    const { name, email } = req.body;
-
-    const user = { id: uuidv4(), name, email };
-
-    database.insert("users", user);
-
-    return res.writeHead(201).end("Sucesso!");
+    return route.handler(req, res);
   }
 
   return res.writeHead(404).end("Pagina Não encontrada");

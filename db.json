@@ -1,14 +1,9 @@
 {
   "users": [
     {
-      "id": "eaef8109-c8bf-4c11-87d8-3a2d74aeed20",
+      "id": "4cf1d7fc-d8ae-4a7a-bdcf-0cacffc702c0",
       "name": "Vitor Andrey",
-      "email": "heitor@heitor.com"
-    },
-    {
-      "id": "9de324bf-c081-467e-85d2-4fcf644b7257",
-      "name": "Heitor Andrey",
-      "email": "heitor@heitor.com"
+      "email": "vitor@vitor.com"
     }
   ]
 }

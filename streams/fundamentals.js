@@ -34,4 +34,6 @@ class MultiplyByTenStream extends Writable {
   }
 }
 
-new OneToHundredStream().pipe(new TranformToNegative()).pipe(new MultiplyByTenStream());
+new OneToHundredStream()
+  .pipe(new TranformToNegative())
+  .pipe(new MultiplyByTenStream());
