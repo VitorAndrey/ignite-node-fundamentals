@@ -1,9 +1,1 @@
-{
-  "users": [
-    {
-      "id": "4cf1d7fc-d8ae-4a7a-bdcf-0cacffc702c0",
-      "name": "Vitor Andrey",
-      "email": "vitor@vitor.com"
-    }
-  ]
-}
+{"users":[{"id":"8e3042e9-de47-4329-b178-97159d98bb2c","name":"Vitor Andrey","email":"vitor@vitor.com"},{"id":"1080b6d2-505c-4555-954a-c5b092aea507","name":"Jhon Doe","email":"jhon@jhon.com"}]}
